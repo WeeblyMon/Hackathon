@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link th:replace="/fragments/header :: bootstrap-css"/>
+    <link th:replace="/fragments/header :: mainstyles"/>
+</head>
+<body>
+<div class="main-container">
+    <header th:replace="/fragments/header :: navbar"></header>
+    <div class="page-container">
+
+        <h1>Profile for:</h1>
+        <h1 th:text="${profile.username}"></h1>
+        <p>Here is your profile with all of your events, communities, and listings</p>
+
+        <h2>Community</h2>
+        <div class="item-list-container">
+            <div class="item-container">
+                <h1 th:text="${profile.community.getName()}"></h1>
+            </div>
+        </div>
+
+        <h2>Listings</h2>
+        <div class="item-list-container" th:each="listing, iStat: ${profile.listings}">
+            <div class="item-container">
+                <p th:text="${listing.itemName}"></p>
+                <p th:text="${listing.itemDescription}"></p>
+                <p th:text="${listing.notesForTrade}"></p>
+                <p th:text="${listing.location}"></p>
+            </div>
+        </div>
+
+<!--        <h2>Events</h2>-->
+<!--        <div class="item-list-container">-->
+
+<!--            <div class="item-container">-->
+<!--&lt;!&ndash;                loop through events here&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <h2>Requests</h2>-->
+<!--        <div class="item-list-container">-->
+<!--            <div class="item-container">-->
+<!--&lt;!&ndash;                loop through requests here&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+
+    </div>
+</div>
+</body>
+</html>

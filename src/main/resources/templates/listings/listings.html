@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link th:replace="/fragments/header :: bootstrap-css"/>
+  <link th:replace="/fragments/header :: mainstyles"/>
+  <link rel="garystylesheet" th:href="@{/styles/garystyle.css}">
+  <!--    put link to any extra stylesheets here-->
+</head>
+<body>
+<div class="main-container">
+  <header th:replace="/fragments/header :: navbar"></header>
+  <div class="page-container">
+
+    <h1>Listings</h1>
+    <a th:href="@{/listings/add}">Add Listing</a>
+
+    <div class="item-list-container" th:each="itemListing : ${listings}">
+      <div class="item-container" >
+          <div class="ListName" th:text="${itemListing.itemName}"></div>
+          <div class="ItemDescription" th:text="${itemListing.itemDescription}"></div>
+          <div class="tradenote" style=color:red; th:text="${itemListing.notesForTrade}"></div>
+          <a th:href="@{/listings/{id} (id=${itemListing.id})}" th:text="more"></a>
+      </div>
+    </div>
+  
+
+  </div>
+</div>
+</body>
+</html>

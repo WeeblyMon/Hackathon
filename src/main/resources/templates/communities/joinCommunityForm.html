@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join Community Form</title>
+    <link th:replace="/fragments/header :: bootstrap-css"/>
+    <link th:replace="/fragments/header :: mainstyles"/>
+    <!--    put link to any extra stylesheets here-->
+</head>
+<body>
+<div class="main-container">
+    <header th:replace="/fragments/header :: navbar"></header>
+    <div class="page-container">
+
+        <h1>Join Community Form</h1>
+
+        <div class="item-list-container">
+            <div class="item-container">
+                <form th:action="@{/communities/{id}/join (id=${community.id})}" th:method="post" th:object="${profile}">
+                    <div>
+                        <label th:for="*{email}">Email:</label>
+                        <input th:field="*{email}" placeholder="Email" type="text"/>
+                        <div th:errors="*{email}" th:if="${#fields.hasErrors('email')}">Email Error</div>
+                    </div>
+                    <div>
+                        <label th:for="*{username}">Username:</label>
+                        <input th:field="*{username}" placeholder="Username" type="text"/>
+                        <div th:errors="*{username}" th:if="${#fields.hasErrors('username')}">Username Error</div>
+                    </div>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

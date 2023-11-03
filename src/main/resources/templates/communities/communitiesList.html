@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Communities</title>
+  <link th:replace="/fragments/header :: bootstrap-css"/>
+  <link th:replace="/fragments/header :: mainstyles"/>
+  <!--    put link to any extra stylesheets here-->
+</head>
+<body>
+<div class="main-container">
+  <header th:replace="/fragments/header :: navbar"></header>
+  <div class="page-container">
+
+    <h1>Communities</h1>
+
+    <div class="item-list-container" th:each="community, iStat: ${communities}">
+      <div class="item-container">
+<!--        community name-->
+        <h2 th:text="${community.name}"></h2>
+<!--        community description-->
+        <p th:text="${community.description}"></p>
+<!--        href that sends to communities/{community.id}/join-->
+        <a th:href="@{/communities/{id}/join (id=${community.id})}" th:text="join"></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

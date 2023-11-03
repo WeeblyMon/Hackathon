@@ -1,0 +1,9 @@
+Definition of Done
+
+1. All known bugs are fixed
+2. Tests pass
+3. Merge request created
+4. Code reviewed by another team member
+5. All Acceptance Criteria met
+6. Code is Merged with no Conflicts
+

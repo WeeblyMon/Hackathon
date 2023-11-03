@@ -1,0 +1,7 @@
+Merge Request Criteria and Process:
+
+1. The feature must be functional
+2. Does not break other features
+3. Must be compatible with other features/pages
+4. Must have been reviewed by another developer
+

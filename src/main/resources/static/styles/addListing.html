@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Listing</title>
+  <link th:replace="/fragments/header :: bootstrap-css"/>
+  <link th:replace="/fragments/header :: mainstyles"/>
+  <!--    put link to any extra stylesheets here-->
+</head>
+<body>
+<div class="main-container">
+  <header th:replace="/fragments/header :: navbar"></header>
+  <div class="page-container">
+    <h1>Add a Listing</h1>
+    <form>
+    <label class = "form-label">Email: </label><br>
+    <input class = "form-control" id="name" name="name" placeholder="Username" style="width: 380px;" type="text"/>
+    <br>
+
+    <label class = "form-label">Swap Location: </label><br>
+    <select name="location" id="location">
+      <option value="" disabled selected>Select a location</option>
+      <option value="Cardiff">Cardiff</option>
+      <option value="Newport">Newport</option>
+      <option value="Swansea">Swansea</option>
+      <div id="locationHelp" class="form-text"></div>
+    </select>
+    <br>
+    <label class = "form-label">itemName: </label><br>
+    <input class = "form-control" id="itemName" name="itemName" placeholder="itemName" style="width: 380px;" type="text"/>
+    <br>
+    <label class="form-check-label">Item Description:</label><br>
+    <textarea rows="12" cols="50" class="form-check-input" id="itemDescription" name="itemDescription" placeholder="Enter an item description, the more details the more helpful it will be for other users when they see your listing"
+    ></textarea>
+    <br>
+    <label class="form-check-label">Willing to trade:</label><br>
+    <textarea rows="12" cols="50" class="form-check-input" id="notesForTrade" name="itemDescription" placeholder="Let other users know what you'd be willing to swap your item for"
+    ></textarea>
+    <br>
+    <div class="mb-3">
+      <label class="form-check-label">Subscribe</label>
+      <input class="form-check-input" type="checkbox"/>
+      <div id="subscribe" class="form-text">Subscribe so we can give you all the exciting news happening within your local community!</div>
+    </div>
+    <br>
+    <div class="mb-3">
+      <button class="btn btn-primary">Submit</button>
+      <a class="btn btn-primary">Cancel</a>
+    </div>
+    </form>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

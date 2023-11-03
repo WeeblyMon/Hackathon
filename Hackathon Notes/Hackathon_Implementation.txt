@@ -1,0 +1,129 @@
+#######################################################
+-------------- WEB APPLICATION STRUCTURE --------------
+#######################################################
+
+
+
+######################## Pages ########################
+
+-> Home
+--> intro to site
+--> links to communities, events, listings, profile??
+
+
+-> Profile -> enter email
+--> show requests -> accept/reject requests
+--> show community(ies)
+--> show events
+
+
+-> Listings
+--> show all listings
+--> see listing details -> send request -> enter email, message, name...
+--> add listing -> enter email, name, image, description
+
+
+-> Communities (for local areas)
+--> show all communities (wales, london...)
+--> join community -> enter email -> 
+
+
+-> Events
+--> show all events
+--> see event details -> see host, description, location, etc
+--> create event -> enter name, email, description, location, etc
+--> sign up for event -> say thanks popup
+
+
+######################## Classes ########################
+
+User class
+- id
+- email:String
+- name:String
+- listings:ArrayList<Listing>
+- reqeusts:ArrayList<Request>
+- community:ArrayList<Community>
+- events:ArrayList<Event>
+
+
+AllUsers class
+- users:HashMap<User.email, User>
++ getUser(email):User
+
+
+Listing class
+- id
+- owner:User
+- image:Image
+- description:String
+
+AllListings class
+- listings:ArrayList<Listing>
+
+
+Community class
+- id
+- name:String
+- description:String
+- participants:ArrayList<User>
+
+AllCommunities class
+- communities:List<Community>
+
++ joinCommunity(email)
+
+
+Event class
+- id
+- name:String
+- date:DateTime
+- description:String
+- creator:User
+
+AllEvents class
+- events:ArrayList<Event>
+
+
+Request class
+- id
+- listing:Listing
+- owner:User
+- requester:User
+- message:String
+
+
+######################## CONTROLLERS ########################
+
+ListingAndRequestController
++ GET all listings
++ GET listing details
++ POST new listing form
++ POST trade request for a listing form
++ GET all trade requests for a parent
++ UPDATE trade request (accept/reject)
+
+EventsController
++ GET all events
++ GET event details
++ POST new event form
++ POST sign up for an event form
+
+CommunitiesController
++ GET all communities
++ GET community details
++ POST join community
++ GET community participants
+
+ProfileController
++ GET all trade requests for a parent
++ GET redirect: to accept/reject trade request form
++ GET all events for a parent
++ GET community for a parent
+
+
+
+
+
+
+

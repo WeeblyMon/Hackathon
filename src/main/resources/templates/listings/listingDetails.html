@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link th:replace="/fragments/header :: bootstrap-css"/>
+  <link th:replace="/fragments/header :: mainstyles"/>
+  <script type="text/javascript" th:src = "@{/js/listingdetails.js}"></script>
+  <link th:href ="@{/styles/listingdetails.css}" rel="stylesheets">
+  <!--    put link to any extra stylesheets here-->
+</head>
+<body>
+<div class="main-container">
+  <header th:replace="/fragments/header :: navbar"></header>
+  <div class="page-container">
+    <!--        put anything that is separate from the list of -->
+    <!--        communities/events/listings here, such as page headings, descriptions, etc-->
+    <!--        make sure you dont put ANYTHING outside of the page container div!!!-->
+
+    <h1>Listing Details</h1>
+    <p>All the information on your listings</p>
+
+    <div class="item-list-container">
+      <!--            use a thymeleaf loop on the item-list-container to list multiple items-->
+
+
+          
+
+      <div class="item-container">
+
+        <!--                use a thymeleaf iterator to create a new item-container div for each item in the list-->
+        <div>
+          <div class="card" style="width: 100%;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body" >
+<!--              <h5 class="card-title" th:text = "${item.id}"></h5>-->
+              <p class="card-text" th:text = "${item.itemDescription}"></p>
+              <p class="card-text" th:text = "${item.email}"></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" th:text = "${item.location}"></li>
+              <li class="list-group-item"th:text = "${item.itemName}"></li>
+              <li class="list-group-item"th:text = "${item.notesForTrade}"></li>
+              <!-- <li class="list-group-item"th:text = "${item.}"></li> -->
+            </ul>
+<!--            <div class="card-body">-->
+<!--              <button href="#" class="listing-details-btn" th:onclick = "returnListing()">Mark as Returned</button>-->
+<!--              <button href="#" class="listing-details-btn" th:onclick = "deleteListing()">Delete listing</button>-->
+<!--            </div>-->
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
